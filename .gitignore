@@ -1,0 +1,70 @@
+﻿# Archivos generados por Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.vspscc
+*.vssscc
+*.class
+*.csproj.user
+*.dbmdl
+*.opendb
+*.pidb
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración
+appsettings*.json
+secrets.json
+
+# Archivos de publicación
+publish/
+out/
+
+# Archivos de paquetes
+*.nupkg
+*.snupkg
+
+# Archivos de dependencias
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de logs
+*.log
+
+# Archivos de herramientas
+.idea/
+*.tlog
+*.log
+*.vsix
+*.vscode/
+
+# Archivos de npm (si usas npm para gestionar dependencias de frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de wwwroot generados
+wwwroot/lib/
+wwwroot/dist/
+wwwroot/node_modules/

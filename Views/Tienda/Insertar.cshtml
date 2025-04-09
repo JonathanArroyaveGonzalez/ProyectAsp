@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Gestión de Bicicletas";
+}
+<div class="container">
+    <h2 class="text-center my-4">Gestión de Bicicletas</h2>
+    <div class="row mb-4">
+        <div class="col">
+            <button id="btnNuevo" class="btn btn-primary">Nueva Bicicleta</button>
+        </div>
+    </div>
+
+    <!-- Tabla de bicicletas -->
+    <div class="table-responsive">
+        <table class="table table-striped" id="tablaBicicletas">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyBicicletas">
+                <!-- Los datos se cargarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para operaciones CRUD -->
+    <div class="modal fade" id="bicicletaModal" tabindex="-1" aria-labelledby="bicicletaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bicicletaModalLabel">Nueva Bicicleta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="f1" id="productForm" asp-controller="Productos" asp-action="Guardar" onsubmit="return false;">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" id="operacion" name="operacion" value="insertar">
+                        <input type="hidden" id="idBicicleta" name="idBicicleta">
+                        <div class="mb-3">
+                            <label for="Placa" class="form-label">Placa:</label>
+                            <input type="text" class="form-control" id="Placa" name="Placa" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Marca" class="form-label">Marca:</label>
+                            <input type="text" class="form-control" id="Marca" name="Marca" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" id="submitBtn" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div class="modal fade" id="confirmarEliminarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro que desea eliminar esta bicicleta?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnConfirmarEliminar" class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
