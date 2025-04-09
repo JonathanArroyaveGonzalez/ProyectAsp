@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Deploy to SmarterASP.NET
-        uses: julian2025-001/SmarterASP.NET-web-deploy@1.0.0
+        uses: jahbenjah/SmarterASP.NET-web-deploy@1.0.0
         with:
           website-name: ${{ secrets.WEBSITE_NAME }}
           server-computer-name: ${{ secrets.SERVER_COMPUTER_NAME }}
